@@ -16,12 +16,15 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
+	// This if statement handles the ping command
 	if (message.content.startsWith('$ping')) {
 		message.channel.send('pong!');
 	}
+	// This if statement handles the hello command
 	if (message.content.startsWith('$hello')) {
 		message.channel.send('Hi');
 	}
+	// This if statement handles xur location information
 	if (message.content.startsWith('$xur')) {
 		date = new Date;
 		if (date.getDay == 5 || date.getHours == 17 || date.getMinutes == 30) {
@@ -31,6 +34,7 @@ client.on('messageCreate', (message) => {
 			message.channel.send('Xur is Communing with The Nine.');
 		}
 	}
+	// This if statement handles the help command
 	if (message.content.startsWith('$help')) {
 		message.channel.send('Here are the available commands. \n $ping - responds with "pong!" \n $hello - resonds with Hi \n $ Xur with respond with information on Xurs location');
 	}
